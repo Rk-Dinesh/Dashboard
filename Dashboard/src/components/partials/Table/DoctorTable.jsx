@@ -158,7 +158,7 @@ const DoctorTable = () => {
                 <td className="table-td">{row.original.phone}</td>
                 <td className="table-td">
                   <div className="d-flex justify-around rtl-space-x-reverse">
-                    <Tooltip content="View" placement="top" arrow animation="shift-away">
+                    <Tooltip content="Update" placement="top" arrow animation="shift-away">
                       <Link to={`/updateform/${row.original._id}`} className="action-btn">
                         <Icon icon="heroicons:pencil-square" />
                       </Link>
