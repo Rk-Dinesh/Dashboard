@@ -16,16 +16,14 @@ const FormGroup = ({
 }) => {
   return (
     <div
-      className={`fromGroup  ${error ? "has-error" : ""}  ${
-        horizontal ? "flex" : ""
-      }  ${validate ? "is-valid" : ""} ${className} `}
+      className={`fromGroup  ${error ? "has-error" : ""}  ${horizontal ? "flex" : ""
+        }  ${validate ? "is-valid" : ""} ${className} `}
     >
       {label && (
         <label
           htmlFor={id}
-          className={`block capitalize ${classLabel}  ${
-            horizontal ? "flex-0 mr-6 md:w-[100px] w-[60px] break-words" : ""
-          }`}
+          className={`block capitalize ${classLabel}  ${horizontal ? "flex-0 mr-6 md:w-[100px] w-[60px] break-words" : ""
+            }`}
         >
           {label}
         </label>
@@ -51,11 +49,10 @@ const FormGroup = ({
       {/* error and success message*/}
       {error && (
         <div
-          className={` mt-2 ${
-            msgTooltip
+          className={` mt-2 ${msgTooltip
               ? " inline-block bg-danger-500 text-white text-[10px] px-2 py-1 rounded"
               : " text-danger-500 block text-sm"
-          }`}
+            }`}
         >
           {error.message}
         </div>
@@ -63,11 +60,10 @@ const FormGroup = ({
       {/* validated and success message*/}
       {validate && (
         <div
-          className={` mt-2 ${
-            msgTooltip
+          className={` mt-2 ${msgTooltip
               ? " inline-block bg-success-500 text-white text-[10px] px-2 py-1 rounded"
               : " text-success-500 block text-sm"
-          }`}
+            }`}
         >
           {validate}
         </div>

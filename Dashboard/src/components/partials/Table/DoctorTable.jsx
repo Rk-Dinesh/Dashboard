@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
 import axios from "axios";
-import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Tooltip from "@/components/ui/Tooltip";
 import {
@@ -110,7 +109,6 @@ const DoctorTable = () => {
 
   return (
     <>
-
       <div className="md:flex justify-between items-center mb-6">
         <div className=" flex items-center space-x-3 rtl:space-x-reverse">
           <select

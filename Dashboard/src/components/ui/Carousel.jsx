@@ -16,7 +16,7 @@ import "swiper/css";
 const Carousel = ({
   spaceBetween = 20,
   slidesPerView = 1,
-  onSlideChange = () => {},
+  onSlideChange = () => { },
   onSwiper,
   children,
   pagination,

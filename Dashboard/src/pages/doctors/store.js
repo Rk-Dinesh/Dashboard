@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import avatar1 from "@/assets/images/avatar/av-1.svg";
 import avatar2 from "@/assets/images/avatar/av-2.svg";
 import avatar3 from "@/assets/images/avatar/av-3.svg";
-import avatar4 from "@/assets/images/avatar/av-4.svg";
+
 
 export const appKanbanSlice = createSlice({
   name: "appkanban",

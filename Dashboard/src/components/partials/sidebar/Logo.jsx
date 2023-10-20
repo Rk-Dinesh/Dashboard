@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Icon from "@/components/ui/Icon";
 import useDarkMode from "@/hooks/useDarkMode";
 import useSidebar from "@/hooks/useSidebar";
 import useSemiDark from "@/hooks/useSemiDark";
@@ -21,12 +20,10 @@ const SidebarLogo = ({ menuHover }) => {
     <div
       className={` logo-segment flex justify-between items-center bg-white dark:bg-slate-800 z-[9] py-6  px-4 
       ${menuHover ? "logo-hovered" : ""}
-      ${
-        skin === "bordered"
+      ${skin === "bordered"
           ? " border-b border-r-0 border-slate-200 dark:border-slate-700"
           : " border-none"
-      }
-      
+        }      
       `}
     >
       <Link to="/dashboard">
@@ -42,7 +39,7 @@ const SidebarLogo = ({ menuHover }) => {
           {(!collapsed || menuHover) && (
             <div>
               <p className="text-success-600">
-                 <b>Pain Management </b>
+                <b>Pain Management </b>
               </p>
             </div>
           )}
@@ -53,11 +50,10 @@ const SidebarLogo = ({ menuHover }) => {
         <div
           onClick={() => setMenuCollapsed(!collapsed)}
           className={`h-4 w-4 border-[1.5px] border-success-600 dark:border-success-600 rounded-full transition-all duration-150
-          ${
-            collapsed
+          ${collapsed
               ? ""
               : "ring-2 ring-inset ring-offset-4 ring-success-600 dark:ring-slate-400 bg-slate-900 dark:bg-slate-400 dark:ring-offset-slate-700"
-          }
+            }
           `}
         ></div>
       )}

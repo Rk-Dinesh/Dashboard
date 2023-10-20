@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Button from "@/components/ui/Button";
-import { Link, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const HomeDoctor = ({ title }) => {
-  let navigate = useNavigate()
 
+  let navigate = useNavigate()
   let handleAddBoard = () => {
     navigate('/form')
   }
@@ -16,19 +15,15 @@ const HomeDoctor = ({ title }) => {
         {title}
       </h4>
       <div className="flex space-x-4 justify-end items-center rtl:space-x-reverse">
-     
-      <Button
-            icon="heroicons-outline:plus"
-            text="Add Doctor"
-            className="bg-slate-800 dark:hover:bg-opacity-70   h-min text-sm font-medium text-slate-50 hover:ring-2 hover:ring-opacity-80 ring-slate-900  hover:ring-offset-1  dark:hover:ring-0 dark:hover:ring-offset-0"
-            iconclassName=" text-lg"
-            onClick={() => handleAddBoard()}
-          />
-        
+        <Button
+          icon="heroicons-outline:plus"
+          text="Add Doctor"
+          className="bg-slate-800 dark:hover:bg-opacity-70   h-min text-sm font-medium text-slate-50 hover:ring-2 hover:ring-opacity-80 ring-slate-900  hover:ring-offset-1  dark:hover:ring-0 dark:hover:ring-offset-0"
+          iconclassName=" text-lg"
+          onClick={() => handleAddBoard()}
+        />
       </div>
-     
     </div>
-    
   );
 };
 

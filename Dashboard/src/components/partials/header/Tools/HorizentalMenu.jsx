@@ -15,8 +15,8 @@ const HorizentalMenu = () => {
               item.child
                 ? "menu-item-has-children"
                 : "" || item.megamenu
-                ? "menu-item-has-children has-megamenu"
-                : ""
+                  ? "menu-item-has-children has-megamenu"
+                  : ""
             }
           >
             {/* Single menu*/}
@@ -81,16 +81,14 @@ const HorizentalMenu = () => {
                           {({ isActive }) => (
                             <div className="flex items-center space-x-2 text-[15px] leading-6 rtl:space-x-reverse">
                               <span
-                                className={`h-[6px] w-[6px] rounded-full border border-slate-600 dark:border-white inline-block flex-none ${
-                                  isActive ? " bg-slate-900 dark:bg-white" : ""
-                                }`}
+                                className={`h-[6px] w-[6px] rounded-full border border-slate-600 dark:border-white inline-block flex-none ${isActive ? " bg-slate-900 dark:bg-white" : ""
+                                  }`}
                               ></span>
                               <span
-                                className={`capitalize ${
-                                  isActive
+                                className={`capitalize ${isActive
                                     ? " text-slate-900 dark:text-white font-medium"
                                     : "text-slate-600 dark:text-slate-300"
-                                }`}
+                                  }`}
                               >
                                 {ms_item.m_childtitle}
                               </span>

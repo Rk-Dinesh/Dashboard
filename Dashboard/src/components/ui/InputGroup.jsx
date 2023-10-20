@@ -46,9 +46,8 @@ const InputGroup = ({
       {label && (
         <label
           htmlFor={id}
-          className={`block capitalize ${classLabel}  ${
-            horizontal ? "flex-0 mr-6 md:w-[100px] w-[60px] break-words" : ""
-          }`}
+          className={`block capitalize ${classLabel}  ${horizontal ? "flex-0 mr-6 md:w-[100px] w-[60px] break-words" : ""
+            }`}
         >
           {label}
         </label>
@@ -86,9 +85,8 @@ const InputGroup = ({
                 type={type === "password" && open === true ? "text" : type}
                 {...register(name)}
                 {...rest}
-                className={`${
-                  error ? " has-error" : " "
-                } input-group-control block w-full focus:outline-none py-2 ${className}  `}
+                className={`${error ? " has-error" : " "
+                  } input-group-control block w-full focus:outline-none py-2 ${className}  `}
                 placeholder={placeholder}
                 readOnly={readonly}
                 disabled={disabled}
@@ -113,9 +111,8 @@ const InputGroup = ({
                 {...rest}
                 placeholder={placeholder}
                 options={options}
-                className={`${
-                  error ? " has-error" : " "
-                } input-group-control w-full py-2 ${className}  `}
+                className={`${error ? " has-error" : " "
+                  } input-group-control w-full py-2 ${className}  `}
                 onFocus={onFocus}
                 id={id}
                 readOnly={readonly}
@@ -127,9 +124,8 @@ const InputGroup = ({
               <Cleave
                 placeholder={placeholder}
                 options={options}
-                className={`${
-                  error ? " has-error" : " "
-                } input-group-control w-full py-2 ${className}  `}
+                className={`${error ? " has-error" : " "
+                  } input-group-control w-full py-2 ${className}  `}
                 onFocus={onFocus}
                 id={id}
                 readOnly={readonly}
@@ -176,11 +172,10 @@ const InputGroup = ({
       {/* error and success message*/}
       {error && (
         <div
-          className={` mt-2 ${
-            msgTooltip
+          className={` mt-2 ${msgTooltip
               ? " inline-block bg-danger-500 text-white text-[10px] px-2 py-1 rounded"
               : " text-danger-500 block text-sm"
-          }`}
+            }`}
         >
           {error.message}
         </div>
@@ -188,11 +183,10 @@ const InputGroup = ({
       {/* validated and success message*/}
       {validate && (
         <div
-          className={` mt-2 ${
-            msgTooltip
+          className={` mt-2 ${msgTooltip
               ? " inline-block bg-success-500 text-white text-[10px] px-2 py-1 rounded"
               : " text-success-500 block text-sm"
-          }`}
+            }`}
         >
           {validate}
         </div>

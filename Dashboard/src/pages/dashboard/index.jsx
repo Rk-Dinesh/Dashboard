@@ -4,8 +4,7 @@ import GroupChart1 from "@/components/partials/widget/chart/group-chart-1";
 import HomeBredCurbs from './HomeBredCurbs';
 import PatientDashboard from '@/components/partials/Table/react-table-Dash';
 
-
-const Dashboard = () =>{
+const Dashboard = () => {
   return (
     <div>
       <HomeBredCurbs title="Dashboard" />
@@ -19,10 +18,10 @@ const Dashboard = () =>{
         </div>
       </div>
       <div className="lg:col-span-12 col-span-12">
-          <Card title="Recent Patients">
-            <PatientDashboard/>
-          </Card>
-        </div>
+        <Card title="Recent Patients">
+          <PatientDashboard />
+        </Card>
+      </div>
     </div>
   )
 }

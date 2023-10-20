@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Icon from "@/components/ui/Icon";
 
-
 const Navmenu = ({ menus }) => {
   const location = useLocation();
   const locationName = location.pathname.replace("/", "");

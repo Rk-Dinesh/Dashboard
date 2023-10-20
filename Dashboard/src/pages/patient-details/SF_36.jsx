@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "@/components/ui/Card";
 import { useLocation } from "react-router-dom";
 import { Tab } from "@headlessui/react";
-import Button from "@/components/ui/Button";
-import { useNavigate } from "react-router-dom"
+
 
 const items = [
     {
@@ -201,18 +199,18 @@ const SF_36 = () => {
 
     useEffect(() => {
         if (email) {
-          axios
-            .get(`http://localhost:3001/sf_36s?email=${email}`)
-            .then((response) => {
-              setData(response.data);
-            })
-            .catch((error) => {
-              console.error("Error fetching answers:", error);
-              
-            });
+            axios
+                .get(`http://localhost:3001/sf_36s?email=${email}`)
+                .then((response) => {
+                    setData(response.data);
+                })
+                .catch((error) => {
+                    console.error("Error fetching answers:", error);
+
+                });
         }
-      }, [email]);
-    
+    }, [email]);
+
 
     return (
         <div>

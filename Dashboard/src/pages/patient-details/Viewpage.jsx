@@ -1,21 +1,13 @@
 import React, { Fragment, useState } from "react";
-import Accordion from "@/components/ui/Accordion";
-import Card from "@/components/ui/Card";
-import Icon from "@/components/ui/Icon";
 import { Tab } from "@headlessui/react";
-import Button from "@/components/ui/Button";
-import { useNavigate, Link } from "react-router-dom"
 import Patient_Details from "./Patient_Details";
 import PCS from "./PCS";
 import MOXFQ from "./MOXFQ";
 import SF_36 from "./SF_36";
 import Images from "./image";
 import Diagnostica from "./Diagnostica";
-import { useLocation } from "react-router-dom";
 
 const Viewpage = () => {
-
-    
 
     const buttons = [
         {
@@ -39,7 +31,7 @@ const Viewpage = () => {
     ];
 
     const [activeComponent, setActiveComponent] = useState(null);
-    
+
 
     const handleButtonClick = (title) => {
 

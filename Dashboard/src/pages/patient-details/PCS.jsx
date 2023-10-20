@@ -1,75 +1,75 @@
-import React, { useEffect, useState  } from "react";
+import React, { useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 const items = [
-    {
-        id: 1,
-        question: "I worry all the time about whether the pain will end.",
-        answer: 1,
-      },
-      {
-        id: 2,
-        question: "I feel I can’t go on.",
-        answer: 1,
-      },
-      {
-        id: 3,
-        question:
-          "It’s terrible and I think it’s never going to get any better.",
-        answer: 2,
-      },
-      {
-        id: 4,
-        question: "It’s awful and I feel that it overwhelms me.",
-        answer: 2,
-      },
-      {
-        id: 5,
-        question: "I feel I can’t stand it anymore.",
-        answer: 2,
-      },
-      {
-        id: 6,
-        question: "I become afraid that the pain will get worse",
-        answer: 2,
-      },
-      {
-        id: 7,
-        question: "I keep thinking of other painful events.",
-        answer: 2,
-      },
-      {
-        id: 8,
-        question: "I anxiously want the pain to go away.",
-        answer: 2,
-      },
-      {
-        id: 9,
-        question: "I can’t seem to keep it out of my mind.",
-        answer: 2,
-      },
-      {
-        id: 10,
-        question: "I keep thinking about how much it hurts.",
-        answer: 2,
-      },
-      {
-        id: 11,
-        question: "I keep thinking about how badly I want the pain to stop.",
-        answer: 2,
-      },
-      {
-        id: 12,
-        question: "There’s nothing I can do to reduce the intensity of the pain",
-        answer: 2,
-      },
-      {
-        id: 13,
-        question: "I wonder whether something serious may happen.",
-        answer: 2,
-      },  
+  {
+    id: 1,
+    question: "I worry all the time about whether the pain will end.",
+    answer: 1,
+  },
+  {
+    id: 2,
+    question: "I feel I can’t go on.",
+    answer: 1,
+  },
+  {
+    id: 3,
+    question:
+      "It’s terrible and I think it’s never going to get any better.",
+    answer: 2,
+  },
+  {
+    id: 4,
+    question: "It’s awful and I feel that it overwhelms me.",
+    answer: 2,
+  },
+  {
+    id: 5,
+    question: "I feel I can’t stand it anymore.",
+    answer: 2,
+  },
+  {
+    id: 6,
+    question: "I become afraid that the pain will get worse",
+    answer: 2,
+  },
+  {
+    id: 7,
+    question: "I keep thinking of other painful events.",
+    answer: 2,
+  },
+  {
+    id: 8,
+    question: "I anxiously want the pain to go away.",
+    answer: 2,
+  },
+  {
+    id: 9,
+    question: "I can’t seem to keep it out of my mind.",
+    answer: 2,
+  },
+  {
+    id: 10,
+    question: "I keep thinking about how much it hurts.",
+    answer: 2,
+  },
+  {
+    id: 11,
+    question: "I keep thinking about how badly I want the pain to stop.",
+    answer: 2,
+  },
+  {
+    id: 12,
+    question: "There’s nothing I can do to reduce the intensity of the pain",
+    answer: 2,
+  },
+  {
+    id: 13,
+    question: "I wonder whether something serious may happen.",
+    answer: 2,
+  },
 ];
 
 const PCS = () => {
@@ -79,17 +79,17 @@ const PCS = () => {
   const email = params.get("email");
   useEffect(() => {
     if (email) {
-        
-        axios
-          .get(`http://localhost:3001/pcss?email=${email}`)
-          .then((response) => {
-            setData(response.data);
-          })
-          .catch((error) => {
-            console.error("Error fetching answers:", error);
-          });
-      }
-    }, [email]);
+
+      axios
+        .get(`http://localhost:3001/pcss?email=${email}`)
+        .then((response) => {
+          setData(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching answers:", error);
+        });
+    }
+  }, [email]);
 
   return (
     <div>

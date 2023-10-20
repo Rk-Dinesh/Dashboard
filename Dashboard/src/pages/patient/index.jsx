@@ -7,11 +7,11 @@ const Patient = () => {
   return (
     <div>
       <HomeBred title="Patient" />
-        <div className="lg:col-span-12 col-span-12">
-          <Card title="Recent Patients">
-            <PatientDetails />
-          </Card>
-        </div>
+      <div className="lg:col-span-12 col-span-12">
+        <Card title="Recent Patients">
+          <PatientDetails />
+        </Card>
+      </div>
     </div>
   );
 };

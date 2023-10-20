@@ -1,16 +1,12 @@
 import React, { useState, useMemo, useEffect} from "react";
 import axios from "axios";
 import Card from "@/components/ui/Card";
-import Icon from "@/components/ui/Icon";
-import Tooltip from "@/components/ui/Tooltip";
 import {
   useTable,
-  useRowSelect,
   useSortBy,
   useGlobalFilter,
   usePagination,
 } from "react-table";
-import GlobalFilter from "./GlobalFilter";
 
 const COLUMNS = [
   {
@@ -74,13 +70,6 @@ const COLUMNS = [
   },
 ];
 
-{/* <style>
-  .hidden {
-   { display : none} }
-</style> */}
-
-
-
 const PatientDashboardDetail= () => {
   const columns = useMemo(() => COLUMNS, []);
   const [data, setData] = useState([]);
@@ -119,22 +108,13 @@ const PatientDashboardDetail= () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    footerGroups,
     page,
-    nextPage,
-    previousPage,
-    canNextPage,
-    canPreviousPage,
-    pageOptions,
     state,
-    gotoPage,
-    pageCount,
     setPageSize,
-    setGlobalFilter,
     prepareRow,
   } = tableInstance;
 
-  const { globalFilter, pageIndex, pageSize } = state;
+  const { pageSize } = state;
   return (
     <>
       <Card>

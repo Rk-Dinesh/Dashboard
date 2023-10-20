@@ -3,8 +3,6 @@ import axios from "axios";
 import { Tab } from "@headlessui/react";
 import { useLocation } from "react-router-dom";
 
-
-
 const items = [
     {
         id: 1,
@@ -143,9 +141,9 @@ const MOXFQ = () => {
                                                 className={`grid grid-cols-12 cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700 rounded-md`}
                                             >
                                                 <span className="col-span-2">{item.id}</span>
-                                                <span className="col-span-9">{item.question}</span>
+                                                <span className="col-span-8">{item.question}</span>
                                                 {Data.length > 0 && (
-                                                    <span>{Data.map((dataItem) => dataItem["m" + item.id])}</span>
+                                                    <span className="col-span-2">{Data.map((dataItem) => dataItem["m" + item.id])}</span>
                                                 )}
                                             </div>
                                         </div>

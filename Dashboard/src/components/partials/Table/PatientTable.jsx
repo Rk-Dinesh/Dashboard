@@ -1,12 +1,11 @@
-import React, { useState, useMemo, useEffect} from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Tooltip from "@/components/ui/Tooltip";
 import axios from "axios";
-import { Link , useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   useTable,
-  useRowSelect,
   useSortBy,
   useGlobalFilter,
   usePagination,
@@ -81,68 +80,62 @@ const COLUMNS = [
     },
   },
 
-{
-  Header: "action",
-  accessor: "action",
-  Cell: ({ row }) => {
-    const navigate = useNavigate();
-    const handleView = (email) => {
-      // Navigate to the ViewPage with the patient's email as a parameter
-      navigate(`/view?email=${encodeURIComponent(email)}`);
-    };
+  {
+    Header: "action",
+    accessor: "action",
+    Cell: ({ row }) => {
+      const navigate = useNavigate();
+      const handleView = (email) => {
+        // Navigate to the ViewPage with the patient's email as a parameter
+        navigate(`/view?email=${encodeURIComponent(email)}`);
+      };
 
-    return (
-      <div className="flex space-x-3 rtl:space-x-reverse">
-        <Tooltip content="View" placement="top" arrow animation="shift-away">
-          <button
-            className="action-btn"
-            type="button"
-            onClick={() => handleView(row.original.email)}
+      return (
+        <div className="flex space-x-3 rtl:space-x-reverse">
+          <Tooltip content="View" placement="top" arrow animation="shift-away">
+            <button
+              className="action-btn"
+              type="button"
+              onClick={() => handleView(row.original.email)}
+            >
+              <Icon icon="heroicons:eye" />
+            </button>
+          </Tooltip>
+          <Tooltip
+            content="Delete"
+            placement="top"
+            arrow
+            animation="shift-away"
+            theme="danger"
           >
-            <Icon icon="heroicons:eye" />
-          </button>
-        </Tooltip>
-        <Tooltip
-          content="Delete"
-          placement="top"
-          arrow
-          animation="shift-away"
-          theme="danger"
-        >
-          <button
-            className="action-btn"
-            type="button"
-            onClick={() => handleDelete(row.original.id)}
-          >
-            <Icon icon="heroicons:trash" />
-          </button>
-        </Tooltip>
-      </div>
-    );
+            <button
+              className="action-btn"
+              type="button"
+              onClick={() => handleDelete(row.original.id)}
+            >
+              <Icon icon="heroicons:trash" />
+            </button>
+          </Tooltip>
+        </div>
+      );
+    },
   },
-},
 
 ];
 
-
-
-const PatientTable= () => {
+const PatientTable = () => {
   const columns = useMemo(() => COLUMNS, []);
-  
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
-
   useEffect(() => {
-    
+
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/patients'); 
+      const response = await axios.get('http://localhost:3001/patients');
       if (response.status === 200) {
         setData(response.data);
       }
@@ -162,12 +155,11 @@ const PatientTable= () => {
     useSortBy,
     usePagination
   );
-  
+
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    footerGroups,
     page,
     nextPage,
     previousPage,
@@ -293,8 +285,8 @@ const PatientTable= () => {
                   href="#"
                   aria-current="page"
                   className={` ${pageIdx === pageIndex
-                      ? "bg-slate-900 dark:bg-slate-600  dark:text-slate-200 text-white font-medium "
-                      : "bg-slate-100 dark:bg-slate-700 dark:text-slate-400 text-slate-900  font-normal  "
+                    ? "bg-slate-900 dark:bg-slate-600  dark:text-slate-200 text-white font-medium "
+                    : "bg-slate-100 dark:bg-slate-700 dark:text-slate-400 text-slate-900  font-normal  "
                     }    text-sm rounded leading-[16px] flex h-6 w-6 items-center justify-center transition-all duration-150`}
                   onClick={() => gotoPage(pageIdx)}
                 >

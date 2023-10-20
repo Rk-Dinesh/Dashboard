@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Register() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        name : '',
+        name: '',
         username: '',
         password: ''
     });
@@ -24,7 +24,7 @@ function Register() {
         try {
             const response = await axios.post('http://localhost:3001/api/register', formData);
             console.log(response.data);
-            
+
             if (response.status === 200) {
                 toast.success('User created successfully');
                 navigate('/');
@@ -49,7 +49,7 @@ function Register() {
                                 <h3 className="mb-4 text-center">Create a New Account</h3>
                                 <h4 className="mb-4 text-center" style={{ color: 'green' }}>Pain Management</h4>
                                 <form onSubmit={handleSubmit}>
-                                <div className="form-outline mb-3">
+                                    <div className="form-outline mb-3">
                                         <label className="form-label" htmlFor="name">
                                             Name
                                         </label>
@@ -109,7 +109,7 @@ function Register() {
                     </div>
                 </div>
             </div>
-         </section>
+        </section>
     );
 }
 

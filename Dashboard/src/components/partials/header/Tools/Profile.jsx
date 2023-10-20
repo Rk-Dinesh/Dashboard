@@ -1,19 +1,15 @@
 import React from "react";
 import Dropdown from "@/components/ui/Dropdown";
 import Icon from "@/components/ui/Icon";
-import { Menu, Transition } from "@headlessui/react";
+import { Menu } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "@/store/api/auth/authSlice";
-
 import UserAvatar from "@/assets/images.png";
-
-
-
 
 const profileLabel = () => {
 
-  
+
   return (
     <div className="flex items-center">
       <div className="flex-1 ltr:mr-[10px] rtl:ml-[10px]">
@@ -27,7 +23,7 @@ const profileLabel = () => {
       </div>
       <div className="flex-none text-slate-600 dark:text-white text-sm font-normal items-center lg:flex hidden overflow-hidden text-ellipsis whitespace-nowrap">
         <span className="overflow-hidden text-ellipsis whitespace-nowrap w-[85px] block">
-        Admin
+          Admin
         </span>
         <span className="text-base inline-block ltr:ml-[10px] rtl:mr-[10px]">
           <Icon icon="heroicons-outline:chevron-down"></Icon>
@@ -40,10 +36,10 @@ const profileLabel = () => {
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+
 
   const handleLogout = () => {
-   
+
     localStorage.removeItem("user");
     dispatch(logOut());
     navigate("");
@@ -74,15 +70,13 @@ const Profile = () => {
           {({ active }) => (
             <div
               onClick={() => item.action()}
-              className={`${
-                active
+              className={`${active
                   ? "bg-slate-100 text-slate-900 dark:bg-slate-600 dark:text-slate-300 dark:bg-opacity-50"
                   : "text-slate-600 dark:text-slate-300"
-              } block     ${
-                item.hasDivider
+                } block     ${item.hasDivider
                   ? "border-t border-slate-100 dark:border-slate-700"
                   : ""
-              }`}
+                }`}
             >
               <div className={`block cursor-pointer px-4 py-2`}>
                 <div className="flex items-center">

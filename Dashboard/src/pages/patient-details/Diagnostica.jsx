@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-
-
 const initialData = [
     { id: 1, code: 'A', condition: 'Fracture', userColumn1: '', userColumn2: '', userColumn3: '', userColumn4: '', userColumn5: '', userColumn6: '' },
     { id: 2, code: 'B', condition: 'Stress Response', userColumn1: '', userColumn2: '', userColumn3: '', userColumn4: '', userColumn5: '', userColumn6: '' },
@@ -55,8 +53,8 @@ const Diagnostica = () => {
 
         if (email === '') {
             alert('Please fill in the email field.');
-            return; 
-          }
+            return;
+        }
         const dataWithEmail = {
             email,
             tableData,
@@ -78,9 +76,6 @@ const Diagnostica = () => {
                 console.error('Error saving data to MongoDB:', error);
             });
     };
-
-
-    
 
     return (
         <div className="overflow-x-auto -mx-6">

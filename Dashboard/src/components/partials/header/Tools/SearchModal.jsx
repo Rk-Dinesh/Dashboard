@@ -119,11 +119,10 @@ const SearchModal = () => {
                           <Combobox.Option key={i}>
                             {({ active }) => (
                               <div
-                                className={`px-4 text-[15px] font-normal capitalize py-2 ${
-                                  active
+                                className={`px-4 text-[15px] font-normal capitalize py-2 ${active
                                     ? "bg-slate-900 dark:bg-slate-600 dark:bg-opacity-60 text-white"
                                     : "text-slate-900 dark:text-white"
-                                }`}
+                                  }`}
                               >
                                 <span>{item.name}</span>
                               </div>

@@ -20,7 +20,7 @@ const UpdateDoctor = () => {
   const {
     register,
     handleSubmit,
-    setValue, 
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(FormValidationSchema),
@@ -65,23 +65,23 @@ const UpdateDoctor = () => {
 
   const Update = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await axios.put(`http://localhost:3001/updateDoctor/${id}`, {
-       userid: userid,
-       firstname: firstname,
-       lastname: lastname,
-       phone: phone,
-       email: email,
-       password: password
+        userid: userid,
+        firstname: firstname,
+        lastname: lastname,
+        phone: phone,
+        email: email,
+        password: password
       });
-  
+
       console.log(response);
-      navigate('/doctors'); 
+      navigate('/doctors');
     } catch (error) {
       console.log(error);
     }
-  };  
+  };
   return (
     <div>
       <div className="flex justify-between flex-wrap items-center mb-6">

@@ -11,9 +11,8 @@ const Checkbox = ({
 }) => {
   return (
     <label
-      className={`flex items-center ${
-        disabled ? " cursor-not-allowed opacity-50" : "cursor-pointer"
-      }`}
+      className={`flex items-center ${disabled ? " cursor-not-allowed opacity-50" : "cursor-pointer"
+        }`}
       id={id}
     >
       <input
@@ -28,11 +27,10 @@ const Checkbox = ({
       <span
         className={`h-4 w-4 border flex-none border-slate-100 dark:border-slate-800 rounded 
         inline-flex ltr:mr-3 rtl:ml-3 relative transition-all duration-150
-        ${
-          value
+        ${value
             ? activeClass + " ring-2 ring-offset-2 dark:ring-offset-slate-800 "
             : "bg-slate-100 dark:bg-slate-600 dark:border-slate-600"
-        }
+          }
         `}
       >
         {value && (

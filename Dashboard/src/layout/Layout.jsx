@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, Fragment, useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "@/components/partials/header";
 import Sidebar from "@/components/partials/sidebar";
@@ -12,12 +12,13 @@ import { ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 import Loading from "@/components/Loading";
 import { motion } from "framer-motion";
+
 const Layout = () => {
   const { width, breakpoints } = useWidth();
   const [collapsed] = useSidebar();
   const navigate = useNavigate();
-  
- 
+
+
   const switchHeaderClass = () => {
     if (menuType === "horizontal" || menuHidden) {
       return "ltr:ml-0 rtl:mr-0";
@@ -31,9 +32,6 @@ const Layout = () => {
   const [contentWidth] = useContentWidth();
   const [menuType] = useMenulayout();
   const [menuHidden] = useMenuHidden();
-  // mobile menu
-  const [mobileMenu, setMobileMenu] = useMobileMenu();
-  const nodeRef = useRef(null);
 
   return (
     <>
@@ -43,9 +41,8 @@ const Layout = () => {
         <Sidebar />
       )}
       <div
-        className={`content-wrapper transition-all duration-150 ${
-          width > 1280 ? switchHeaderClass() : ""
-        }`}
+        className={`content-wrapper transition-all duration-150 ${width > 1280 ? switchHeaderClass() : ""
+          }`}
       >
         {/* md:min-h-screen will h-full*/}
         <div className="page-content   page-min-height  ">
@@ -80,7 +77,7 @@ const Layout = () => {
                   duration: 0.5,
                 }}
               >
-                
+
                 {<Outlet />}
               </motion.div>
             </Suspense>

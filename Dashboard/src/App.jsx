@@ -17,11 +17,6 @@ import Layout from "./layout/Layout";
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
 
-  const logout = () => {
-    localStorage.removeItem('token');
-    setToken('');
-  }
-
   return (
     <div>
       <ToastContainer position="top-right" autoClose={1000} />
