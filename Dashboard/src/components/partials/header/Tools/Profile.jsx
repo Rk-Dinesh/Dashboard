@@ -8,7 +8,12 @@ import { logOut } from "@/store/api/auth/authSlice";
 
 import UserAvatar from "@/assets/images.png";
 
+
+
+
 const profileLabel = () => {
+
+  
   return (
     <div className="flex items-center">
       <div className="flex-1 ltr:mr-[10px] rtl:ml-[10px]">
@@ -22,7 +27,7 @@ const profileLabel = () => {
       </div>
       <div className="flex-none text-slate-600 dark:text-white text-sm font-normal items-center lg:flex hidden overflow-hidden text-ellipsis whitespace-nowrap">
         <span className="overflow-hidden text-ellipsis whitespace-nowrap w-[85px] block">
-          Ravikumar
+        Admin
         </span>
         <span className="text-base inline-block ltr:ml-[10px] rtl:mr-[10px]">
           <Icon icon="heroicons-outline:chevron-down"></Icon>
@@ -35,11 +40,13 @@ const profileLabel = () => {
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  
 
   const handleLogout = () => {
-    // Clear user data from local storage
+   
     localStorage.removeItem("user");
     dispatch(logOut());
+    navigate("");
   };
 
   const ProfileMenu = [

@@ -1,13 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
+//needed
 
-const storedUser = JSON.parse(localStorage.getItem("user"));
+import { createSlice } from "@reduxjs/toolkit";
+
+const storedUserData = JSON.parse(localStorage.getItem("user"));
 
 export const authSlice = createSlice({
   name: "auth",
   initialState: {
-    user: storedUser || null,
-    isAuth: !!storedUser,
+    user: storedUserData || { name: "", token: "" }, 
+    isAuth: !!storedUserData,
   },
   reducers: {
     setUser: (state, action) => {
@@ -15,7 +16,7 @@ export const authSlice = createSlice({
       state.isAuth = true;
     },
     logOut: (state, action) => {
-      state.user = null;
+      state.user = { name: "", token: "" }; 
       state.isAuth = false;
     },
   },
