@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 import Card from "@/components/ui/Card";
 import { Tab } from "@headlessui/react"; import axios from "axios";
 import { useLocation } from "react-router-dom";
+import Row from "@/components/ui/Row";
+import Row1 from "@/components/ui/Row1";
+import Row2 from "@/components/ui/Row2";
+import Row3 from "@/components/ui/Row3";
+import Row4 from "@/components/ui/Row4";
+import Row5 from "@/components/ui/Row5";
+import Row6 from "@/components/ui/Row6";
+import Row7 from "@/components/ui/Row7";
 
 const Patient_Details = () => {
 
     const [Data, setData] = useState([]);
+    const [RowData, setRowData] = useState([]);
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const email = params.get("email");
@@ -21,6 +30,16 @@ const Patient_Details = () => {
                 })
                 .catch((error) => {
                     console.error("Error fetching answers:", error);
+                });
+
+            axios
+                .get(`http://localhost:3001/patientinfo?email=${email}`)
+                .then((response) => {
+                    console.log(response.data)
+                    setRowData(response.data);
+                })
+                .catch((error) => {
+                    console.error("Error fetching Row data:", error);
                 });
         }
     }, [email]);
@@ -70,77 +89,16 @@ const Patient_Details = () => {
                     <div className="xl:col-span-9 lg:col-span-8 col-span-12">
                         <Tab.Panels>
                             <Tab.Panel>
-                                <div className="space-y-1">
-                                    <div>
-                                        <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                            <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                <span>Patient Medical Dataset</span>
-                                                <span><i className="fa fa-angle-down"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="space-y-5">
-                                            <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                                <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                    <span>Reffering Doctors</span>
-                                                    <span><i className="fa fa-angle-down"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="space-y-5">
-                                            <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                                <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                    <span>Insurance & Compensation</span>
-                                                    <span><i className="fa fa-angle-down"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="space-y-5">
-                                            <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                                <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                    <span>Medication & Allergies</span>
-                                                    <span><i className="fa fa-angle-down"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="space-y-5">
-                                            <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                                <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                    <span>MRI Safety Questions</span>
-                                                    <span><i className="fa fa-angle-down"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="space-y-5">
-                                            <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                                <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                    <span>Surgical History</span>
-                                                    <span><i className="fa fa-angle-down"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="space-y-5">
-                                            <div className="accordion shadow-base dark:shadow-none rounded-md">
-                                                <div className="flex justify-between cursor-pointer transition duration-150 font-medium w-full text-start text-base text-slate-600 dark:text-slate-300 px-8 py-4 bg-white dark:bg-slate-700  rounded-md">
-                                                    <span>Medical History</span>
-                                                    <span><i className="fa fa-angle-down"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <Row className="mb-1" data={RowData} />
+                                <Row1 className="mb-1" data={RowData} />
+                                <Row2 className="mb-1" data={RowData} />
+                                <Row3 className="mb-1" data={RowData} />
+                                <Row4 className="mb-1" data={RowData} />
+                                <Row5 className="mb-1" data={RowData} />
+                                <Row6 className="mb-1" data={RowData} />
+                                <Row7 data={RowData} />
                             </Tab.Panel>
+
                         </Tab.Panels>
                     </div>
                 </div>
